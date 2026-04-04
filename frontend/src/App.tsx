@@ -1,15 +1,12 @@
-import { useState } from 'react'
+import { Routes, Route } from "react-router";
+import JoinRoom from "./pages/JoinRoom";
+import ChatRoom from "./pages/ChatRoom";
 
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-   <div  className='bg-amber-200'> 
-    hero shima 
-   </div>
-  )
+    <Routes>
+      <Route path="/" element={<JoinRoom />} />
+      <Route path="/chat/:roomId" element={<ChatRoom />} />
+    </Routes>
+  );
 }
-
-export default App
